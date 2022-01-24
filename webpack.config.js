@@ -24,15 +24,23 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader'],
+                loader: 'babel-loader',
+                options: {
+                    cacheCompression: false,
+                    cacheDirectory: true,
+                },
             },
-            { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
-            { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
         ],
     },
     resolve: {
         alias: {
             '@mui/styled-engine': '@mui/styled-engine-sc',
+        },
+    },
+    optimization: {
+        splitChunks: {
+            minSize: 10000,
+            maxSize: 250000,
         },
     },
 };
