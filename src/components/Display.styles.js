@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const StyledDiv = styled.div`
-    width: 25rem;
+    width: 22.5rem;
     height: 12rem;
-    background-color: #275869;
+    background-color: #D3E4CD;
     display: grid;
     grid-template-rows: repeat(2, 2fr);
     align-items: center;
+
+    @media(min-width: 768px) {
+        width: 32.5rem;
+    }
 `;
 
 export const InnerDisplay = styled.p`

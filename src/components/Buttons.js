@@ -16,7 +16,7 @@ export const Buttons = () => {
             <StyledButton
                 large
                 id="clear"
-                style={{ gridColumn: '1/3' }}
+                style={{ gridColumn: '1/3', backgroundColor: '#FF6363' }}
                 onClick={() => setData({ type: 'RESET_CALC' })}
             >
                 AC
@@ -24,7 +24,7 @@ export const Buttons = () => {
             <StyledButton
                 large
                 id="equals"
-                style={{ gridColumn: '3/5' }}
+                style={{ gridColumn: '3/5', backgroundColor: '#FFFDA2' }}
                 onClick={() => setData({ type: 'CALCULATE' })}
             >
                 =
@@ -40,6 +40,7 @@ export const Buttons = () => {
             </StyledButton>
             <StyledButton
                 id="divide"
+                operator="true"
                 onClick={() => setData({ type: 'ADD_OPERATOR', payload: '÷' })}
             >
                 ÷
@@ -55,6 +56,7 @@ export const Buttons = () => {
             </StyledButton>
             <StyledButton
                 id="multiply"
+                operator="true"
                 onClick={() => setData({ type: 'ADD_OPERATOR', payload: '*' })}
             >
                 <Clear fontSize="2rem" style={{ paddingTop: '0.5rem' }} />
@@ -70,6 +72,7 @@ export const Buttons = () => {
             </StyledButton>
             <StyledButton
                 id="subtract"
+                operator="true"
                 onClick={() => setData({ type: 'ADD_OPERATOR', payload: '-' })}
             >
                 <Remove fontSize="2rem" style={{ paddingTop: '0.5rem' }} />
@@ -82,12 +85,14 @@ export const Buttons = () => {
             </StyledButton>
             <StyledButton
                 id="backspace"
+                operator="true"
                 onClick={() => setData({ type: 'REMOVE_DIGIT' })}
             >
                 <Backspace fontSize="2rem" style={{ paddingTop: '0.5rem' }} />
             </StyledButton>
             <StyledButton
                 id="add"
+                operator="true"
                 onClick={() => setData({ type: 'ADD_OPERATOR', payload: '+' })}
             >
                 +
